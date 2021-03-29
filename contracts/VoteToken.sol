@@ -62,7 +62,7 @@ contract VoteToken is ERC20 {
 
 
   // 投同意票
-  function aggree(uint _id) public{
+  function agree(uint _id) public{
     require(getVoteStatus(_id)==0,"vote closed");
     require(is_voted[msg.sender][_id]==false,"You've already voted!");
     require(balanceOf(msg.sender)>=1,"You don't have enough tokens!");

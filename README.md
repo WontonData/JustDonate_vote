@@ -13,9 +13,9 @@
 ## 地址
 
 ```
-cfxtest:type.contract:acfg9affbjuppf5acemrrat571ahpafdyu86a92ujc
+cfxtest:type.contract:acg97h0gzhrsu6srstutaaju9j6w405ybjs8e8mpwj
 
-0x8a6f80A50a20c617601114D681FbEDC07600A3a4
+0x8dfe9ec6A9dAE871Cd73E0f00110Fa392D5B740A
 ```
 
 ## ABI
@@ -517,7 +517,7 @@ cfxtest:type.contract:acfg9affbjuppf5acemrrat571ahpafdyu86a92ujc
         "type": "uint256"
       }
     ],
-    "name": "aggree",
+    "name": "agree",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
