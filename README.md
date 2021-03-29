@@ -13,9 +13,9 @@
 ## 地址
 
 ```
-net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
+cfxtest:type.contract:acfg9affbjuppf5acemrrat571ahpafdyu86a92ujc
 
-0x8e1e74b9896006fC7BA6147B630380763C1961Dd
+0x8a6f80A50a20c617601114D681FbEDC07600A3a4
 ```
 
 ## ABI
@@ -25,14 +25,13 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "_voteCoinaddr",
-        "type": "address",
-        "networkId": 1
+        "internalType": "uint256",
+        "name": "initialSupply",
+        "type": "uint256"
       },
       {
         "internalType": "address",
-        "name": "_voteReceiver",
+        "name": "demandFactoryAddress",
         "type": "address",
         "networkId": 1
       }
@@ -40,6 +39,60 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
     "stateMutability": "nonpayable",
     "type": "constructor",
     "name": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "spender",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "Approval",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "from",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "Transfer",
+    "type": "event"
   },
   {
     "anonymous": false,
@@ -109,12 +162,58 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
         "type": "uint256"
       }
     ],
+    "name": "voteNotThrough",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "voteTime",
+        "type": "uint256"
+      }
+    ],
     "name": "voteThrough",
     "type": "event"
   },
   {
     "inputs": [],
-    "name": "coinNum",
+    "name": "admin",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address",
+        "networkId": 1
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "internalType": "address",
+        "name": "spender",
+        "type": "address",
+        "networkId": 1
+      }
+    ],
+    "name": "allowance",
     "outputs": [
       {
         "internalType": "uint256",
@@ -123,6 +222,114 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "spender",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "approve",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address",
+        "networkId": 1
+      }
+    ],
+    "name": "balanceOf",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "decimals",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "spender",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "internalType": "uint256",
+        "name": "subtractedValue",
+        "type": "uint256"
+      }
+    ],
+    "name": "decreaseAllowance",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "spender",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "internalType": "uint256",
+        "name": "addedValue",
+        "type": "uint256"
+      }
+    ],
+    "name": "increaseAllowance",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -152,13 +359,12 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
   },
   {
     "inputs": [],
-    "name": "receiver",
+    "name": "name",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "string",
         "name": "",
-        "type": "address",
-        "networkId": 1
+        "type": "string"
       }
     ],
     "stateMutability": "view",
@@ -166,13 +372,12 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
   },
   {
     "inputs": [],
-    "name": "voteCoinToken",
+    "name": "symbol",
     "outputs": [
       {
-        "internalType": "contract voteCoin",
+        "internalType": "string",
         "name": "",
-        "type": "address",
-        "networkId": 1
+        "type": "string"
       }
     ],
     "stateMutability": "view",
@@ -180,16 +385,71 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
   },
   {
     "inputs": [],
-    "name": "voteCoinaddr",
+    "name": "totalSupply",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "uint256",
         "name": "",
-        "type": "address",
-        "networkId": 1
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "transfer",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address",
+        "networkId": 1
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferFrom",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -238,6 +498,25 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
         "type": "uint256"
       }
     ],
+    "name": "getVoteStatus",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "status",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      }
+    ],
     "name": "aggree",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -264,7 +543,7 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
         "type": "uint256"
       }
     ],
-    "name": "getVotes",
+    "name": "getVotesCount",
     "outputs": [
       {
         "internalType": "uint256",
@@ -288,7 +567,7 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
         "type": "uint256"
       }
     ],
-    "name": "getVoters",
+    "name": "getAllVoters",
     "outputs": [
       {
         "internalType": "address[]",
@@ -302,6 +581,13 @@ net999:type.contract:achb67f3vfuar9d5y2mh022dub5d2gnb5ya6gsen43
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "destroy",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]
