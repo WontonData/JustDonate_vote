@@ -1,0 +1,9 @@
+{
+  "language": "",
+  "main": "./contracts/vote.sol",
+  "deploy": "./build/contracts/vote.json",
+  "compilers": {
+    "cfxtruffle": "0.0.8",
+    "solc": "0.6.12"
+  }
+}
