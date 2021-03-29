@@ -11,14 +11,14 @@ contract VoteToken is ERC20 {
     uint voteNum; //投票数
     address[] voters; //投票人
   }
-  mapping(uint => voteInfo) public votes_aggree; //同意票
+  mapping(uint => voteInfo) public votes_agree; //同意票
   mapping(uint => voteInfo) public votes_against; //反对票
   mapping(address => mapping(uint => bool)) public is_voted; //是否投过票
   address receiver = address(0);
   DemandFactory demandFactory;
   address public admin;
 
-  event addAggree(uint _id,address sender,uint voteTime); //投同意票事件
+  event addAgree(uint _id,address sender,uint voteTime); //投同意票事件
   event addAgainst(uint _id,address sender,uint voteTime); //投反对票事件
   event voteThrough(uint _id,uint voteTime); //投票通过事件
   event voteNotThrough(uint _id,uint voteTime); //投票不通过事件
@@ -47,11 +47,11 @@ contract VoteToken is ERC20 {
     }else{
       //还能投票
       if(
-        votes_aggree[_id].voteNum<passBaseLineNum &&
+        votes_agree[_id].voteNum<passBaseLineNum &&
         votes_against[_id].voteNum<failBaseLineNum
       ){
         return 0;
-      }else if(votes_aggree[_id].voteNum>=passBaseLineNum){
+      }else if(votes_agree[_id].voteNum>=passBaseLineNum){
         return 1;
       }
     }
@@ -59,7 +59,6 @@ contract VoteToken is ERC20 {
     return 4;
 
   }
-
 
   // 投同意票
   function agree(uint _id) public{
@@ -70,10 +69,10 @@ contract VoteToken is ERC20 {
     _burn(msg.sender, 1);
     //_mint(receiver, 1);
     is_voted[msg.sender][_id]=true;
-    votes_aggree[_id].voters.push(msg.sender);
-    votes_aggree[_id].voteNum++;
+    votes_agree[_id].voters.push(msg.sender);
+    votes_agree[_id].voteNum++;
 
-    emit addAggree(_id,msg.sender,now);
+    emit addAgree(_id,msg.sender,now);
     if(getVoteStatus(_id)==1){
       demandFactory.update(_id);
       emit voteThrough(_id,now);
@@ -100,14 +99,14 @@ contract VoteToken is ERC20 {
   }
 
   // 获取对应需求的投票总数
-  function getVotesCount(uint _id) public view returns(uint aggreeNum ,uint againstNum){
-    aggreeNum=votes_aggree[_id].voteNum;
+  function getVotesCount(uint _id) public view returns(uint agreeNum ,uint againstNum){
+    agreeNum=votes_agree[_id].voteNum;
     againstNum=votes_against[_id].voteNum;
   }
 
   // 获取总共有哪些人投了对应的需求
-  function getAllVoters(uint _id) public view returns(address[] memory aggree_voters,address[] memory against_voters){
-    aggree_voters=votes_aggree[_id].voters;
+  function getAllVoters(uint _id) public view returns(address[] memory agree_voters,address[] memory against_voters){
+    agree_voters=votes_agree[_id].voters;
     against_voters=votes_against[_id].voters;
   }
   

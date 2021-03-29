@@ -13,9 +13,9 @@
 ## 地址
 
 ```
-cfxtest:type.contract:acg97h0gzhrsu6srstutaaju9j6w405ybjs8e8mpwj
+cfxtest:type.contract:acb30f0zy83vaxew8tyraj2c1g92yfmpneunkdxmb5
 
-0x8dfe9ec6A9dAE871Cd73E0f00110Fa392D5B740A
+0x839B16D5A7B3104c92f3e8D02302b9Bf8A154C59
 ```
 
 ## ABI
