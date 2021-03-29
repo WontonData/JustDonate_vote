@@ -7,14 +7,6 @@ import "./interfaces/DemandFactory.sol";
 
 contract VoteToken is ERC20 {
 
-  struct Demand {
-    uint id;          //需求编号
-    string username;  //发起人 or 机构 名称
-    address sender;   //发起人address
-    string content;   //需求内容
-    string contact;   //联系方式
-    uint status;      //状态号 0:初始 1：通过 2：捐赠中 3：捐赠完成 4：失败
-  }
   struct voteInfo{
     uint voteNum; //投票数
     address[] voters; //投票人
@@ -24,6 +16,7 @@ contract VoteToken is ERC20 {
   mapping(address => mapping(uint => bool)) public is_voted; //是否投过票
   address receiver = address(0);
   DemandFactory demandFactory;
+  address public admin;
 
   event addAggree(uint _id,address sender,uint voteTime); //投同意票事件
   event addAgainst(uint _id,address sender,uint voteTime); //投反对票事件
@@ -34,11 +27,11 @@ contract VoteToken is ERC20 {
     _mint(msg.sender, initialSupply);
     receiver=msg.sender;
     demandFactory = DemandFactory(demandFactoryAddress);
-    
+    admin = msg.sender;
   }
 
   // 获取投票状态 0:初始 1：通过 2：捐赠中 3：捐赠完成 4：失败
-  function getVoteStatus(uint _id) private view returns(uint8 status) {
+  function getVoteStatus(uint _id) public view returns(uint8 status) {
     uint  id;          //需求编号
     string memory username;  //发起人 or 机构 名称
     address  sender;   //发起人address
@@ -49,7 +42,7 @@ contract VoteToken is ERC20 {
     uint8 passBaseLineNum = 2;
     uint8 failBaseLineNum = 2;
 
-    if(getStatus!=0 && getStatus!=2){
+    if(getStatus!=0){
       return uint8(getStatus);
     }else{
       //还能投票
@@ -57,7 +50,7 @@ contract VoteToken is ERC20 {
         votes_aggree[_id].voteNum<passBaseLineNum &&
         votes_against[_id].voteNum<failBaseLineNum
       ){
-        return 2;
+        return 0;
       }else if(votes_aggree[_id].voteNum>=passBaseLineNum){
         return 1;
       }
@@ -70,7 +63,7 @@ contract VoteToken is ERC20 {
 
   // 投同意票
   function aggree(uint _id) public{
-    require(getVoteStatus(_id)==0 || getVoteStatus(_id)==2,"vote closed");
+    require(getVoteStatus(_id)==0,"vote closed");
     require(is_voted[msg.sender][_id]==false,"You've already voted!");
     require(balanceOf(msg.sender)>=1,"You don't have enough tokens!");
 
@@ -89,7 +82,7 @@ contract VoteToken is ERC20 {
   
   // 投反对票
   function against(uint _id) public{
-    require(getVoteStatus(_id)==0 || getVoteStatus(_id)==2,"vote closed");
+    require(getVoteStatus(_id)==0,"vote closed");
     require(is_voted[msg.sender][_id]==false,"You've already voted!");
     require(balanceOf(msg.sender)>=1,"You don't have enough tokens!");
 
@@ -116,5 +109,11 @@ contract VoteToken is ERC20 {
   function getAllVoters(uint _id) public view returns(address[] memory aggree_voters,address[] memory against_voters){
     aggree_voters=votes_aggree[_id].voters;
     against_voters=votes_against[_id].voters;
+  }
+  
+  //合约销毁
+  function destroy() public{      
+    require(admin == msg.sender,"not permit");
+    selfdestruct(msg.sender);
   }
 }
