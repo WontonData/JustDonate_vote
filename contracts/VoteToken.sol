@@ -38,7 +38,7 @@ contract VoteToken is ERC20 {
   }
 
   // 获取投票状态 0:初始 1：通过 2：捐赠中 3：捐赠完成 4：失败
-  function getVoteStatus(uint _id) public view returns(uint8 status) {
+  function getVoteStatus(uint _id) private view returns(uint8 status) {
     uint  id;          //需求编号
     string memory username;  //发起人 or 机构 名称
     address  sender;   //发起人address
