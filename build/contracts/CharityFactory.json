@@ -1,0 +1,215 @@
+{
+  "contractName": "CharityFactory",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "charities",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"charities\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/f/BlockChain/Vote/contracts/interfaces/CharityFactory.sol\":\"CharityFactory\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/f/BlockChain/Vote/contracts/interfaces/CharityFactory.sol\":{\"keccak256\":\"0x723ca31e7a9b2006c3ec31b9e8e33ceeec6a59bf2085e066d76319026789aeb1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://147abf3b55662638d3cbbd527348f3d3cf9b906509e90a092a65b3f8e018a352\",\"dweb:/ipfs/QmVjiZfX9JzjVniskJ9jEAp1mSBeZmkRk2gKpqXzZ8eRe7\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.6.0;\r\n\r\nabstract contract CharityFactory {\r\n  address[] public charities;\r\n}",
+  "sourcePath": "/f/BlockChain/Vote/contracts/interfaces/CharityFactory.sol",
+  "ast": {
+    "absolutePath": "/f/BlockChain/Vote/contracts/interfaces/CharityFactory.sol",
+    "exportedSymbols": {
+      "CharityFactory": [
+        502
+      ]
+    },
+    "id": 503,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 498,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:2"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 502,
+        "linearizedBaseContracts": [
+          502
+        ],
+        "name": "CharityFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "fb709d2e",
+            "id": 501,
+            "mutability": "mutable",
+            "name": "charities",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 502,
+            "src": "98:26:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 499,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "98:7:2",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 500,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "98:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 503,
+        "src": "60:68:2"
+      }
+    ],
+    "src": "33:95:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/f/BlockChain/Vote/contracts/interfaces/CharityFactory.sol",
+    "exportedSymbols": {
+      "CharityFactory": [
+        502
+      ]
+    },
+    "id": 503,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 498,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:2"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 502,
+        "linearizedBaseContracts": [
+          502
+        ],
+        "name": "CharityFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "fb709d2e",
+            "id": 501,
+            "mutability": "mutable",
+            "name": "charities",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 502,
+            "src": "98:26:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 499,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "98:7:2",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 500,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "98:9:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 503,
+        "src": "60:68:2"
+      }
+    ],
+    "src": "33:95:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Linux.g++"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.0",
+  "updatedAt": "2021-04-16T16:26:26.585Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

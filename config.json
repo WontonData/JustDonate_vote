@@ -4,6 +4,6 @@
   "deploy": "./build/contracts/VoteToken.json",
   "compilers": {
     "cfxtruffle": "0.0.8",
-    "solc": "0.6.12"
+    "solc": "0.6.11"
   }
 }
