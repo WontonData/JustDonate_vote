@@ -22,7 +22,7 @@ xbb: `cfx:aarrdu3wde9pxn1pa3r7vcfavk6wah1sapxsha6t5b`
 
 ## 地址
 
-主网: `cfx:acfac5zt93bh2n6k74vxkw4jv16rng8usyze5s8w1t`
+主网: `cfx:acfszvkxrw1yf58rwf5vkk8b91v89xdfza5ruke3fb`
 
 
 
