@@ -4,6 +4,7 @@ pragma solidity ^0.6.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./lib/Ownable.sol";
+import "./lib/SponsorWhitelistControl.sol";
 
 contract VoteToken is ERC20 , Ownable{
 
@@ -16,6 +17,7 @@ contract VoteToken is ERC20 , Ownable{
   mapping(address => mapping(uint => bool)) public is_voted; //是否投过票
   address receiver = address(0); //接受vote币的地址
   address public admin; 
+  SponsorWhitelistControl constant public SPONSOR = SponsorWhitelistControl(0x0888000000000000000000000000000000000001);
 
   event addAgree(uint _id,address sender,uint voteTime); //投同意票事件
   event addAgainst(uint _id,address sender,uint voteTime); //投反对票事件
@@ -26,6 +28,10 @@ contract VoteToken is ERC20 , Ownable{
     _mint(msg.sender, initialSupply * 1 ether);
     receiver=msg.sender;
     admin = msg.sender;
+
+    address[] memory users = new address[](1);
+    users[0] = address(0);
+    SPONSOR.addPrivilege(users);
   }
 
 

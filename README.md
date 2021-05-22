@@ -202,6 +202,19 @@ xbb: `cfx:aarrdu3wde9pxn1pa3r7vcfavk6wah1sapxsha6t5b`
   },
   {
     "inputs": [],
+    "name": "SPONSOR",
+    "outputs": [
+      {
+        "internalType": "contract SponsorWhitelistControl",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "admin",
     "outputs": [
       {
