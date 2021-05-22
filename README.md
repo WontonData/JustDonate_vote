@@ -6,23 +6,23 @@
 
 投票价格为: 1e18 vote
 
-同意票超过2(passVoteNum)票,投票通过
-
-反对票超过2(failVoteNum)票,投票不通过
 
 ## 成员
-```
-cfxtest:aap9mbkjayurhtrcka9pchre1m3fmbz9gez0hun8zx
-cfxtest:aatjmdpyhmgf1wbe3h4b3m6x7yy7esd0525m76vk3m
-cfxtest:aanu9pm7n3r53jj4t942chf9b7xhgg02guvxcr79eg
-cfxtest:aajvrve0c38hpnk3annpuhb4xyup1rhcee8vfykew2
-```
+
+lc: `cfx:aap9mbkjayurhtrcka9pchre1m3fmbz9gez0hun8zx`
+
+jbq: `cfx:aatjmdpyhmgf1wbe3h4b3m6x7yy7esd0525m76vk3m`
+
+cyy: `cfx:aanu9pm7n3r53jj4t942chf9b7xhgg02guvxcr79eg`
+
+qyh: `cfx:aajvrve0c38hpnk3annpuhb4xyup1rhcee8vfykew2`
+
+xbb: `cfx:aarrdu3wde9pxn1pa3r7vcfavk6wah1sapxsha6t5b`
+
 
 ## 地址
 
 主网: `cfx:acfac5zt93bh2n6k74vxkw4jv16rng8usyze5s8w1t`
-
-
 
 
 
