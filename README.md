@@ -20,17 +20,18 @@ cfxtest:aajvrve0c38hpnk3annpuhb4xyup1rhcee8vfykew2
 
 ## 地址
 
-```
-cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
+主网: `cfx:acfac5zt93bh2n6k74vxkw4jv16rng8usyze5s8w1t`
 
-0x83000D67D799ee3212363E23BeF2F63551B8e32f
-```
+
+
+
 
 ## ABI
 
 
 
 ```json
+//主网
 [
   {
     "inputs": [
@@ -38,17 +39,10 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
         "internalType": "uint256",
         "name": "initialSupply",
         "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "charityFactoryAddress",
-        "type": "address",
-        "networkId": 1
       }
     ],
     "stateMutability": "nonpayable",
-    "type": "constructor",
-    "name": "constructor"
+    "type": "constructor"
   },
   {
     "anonymous": false,
@@ -57,15 +51,13 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
         "indexed": true,
         "internalType": "address",
         "name": "owner",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "indexed": true,
         "internalType": "address",
         "name": "spender",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "indexed": false,
@@ -84,15 +76,13 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
         "indexed": true,
         "internalType": "address",
         "name": "previousOwner",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "indexed": true,
         "internalType": "address",
         "name": "newOwner",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       }
     ],
     "name": "OwnershipTransferred",
@@ -105,15 +95,13 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
         "indexed": true,
         "internalType": "address",
         "name": "from",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "indexed": true,
         "internalType": "address",
         "name": "to",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "indexed": false,
@@ -138,8 +126,7 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
         "indexed": false,
         "internalType": "address",
         "name": "sender",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "indexed": false,
@@ -164,8 +151,7 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
         "indexed": false,
         "internalType": "address",
         "name": "sender",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "indexed": false,
@@ -222,8 +208,7 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
       {
         "internalType": "address",
         "name": "",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -234,14 +219,12 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
       {
         "internalType": "address",
         "name": "owner",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "internalType": "address",
         "name": "spender",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       }
     ],
     "name": "allowance",
@@ -260,8 +243,7 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
       {
         "internalType": "address",
         "name": "spender",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "internalType": "uint256",
@@ -285,8 +267,7 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
       {
         "internalType": "address",
         "name": "account",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       }
     ],
     "name": "balanceOf",
@@ -318,8 +299,7 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
       {
         "internalType": "address",
         "name": "spender",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "internalType": "uint256",
@@ -339,25 +319,11 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "failVoteNum",
-    "outputs": [
-      {
-        "internalType": "uint8",
-        "name": "",
-        "type": "uint8"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
         "name": "spender",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "internalType": "uint256",
@@ -381,8 +347,7 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
       {
         "internalType": "address",
         "name": "",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "internalType": "uint256",
@@ -421,21 +386,7 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
       {
         "internalType": "address payable",
         "name": "",
-        "type": "address",
-        "networkId": 1
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "passVoteNum",
-    "outputs": [
-      {
-        "internalType": "uint8",
-        "name": "",
-        "type": "uint8"
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -472,8 +423,7 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
       {
         "internalType": "address",
         "name": "recipient",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "internalType": "uint256",
@@ -497,14 +447,12 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
       {
         "internalType": "address",
         "name": "sender",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "internalType": "address",
         "name": "recipient",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       },
       {
         "internalType": "uint256",
@@ -528,8 +476,7 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
       {
         "internalType": "address payable",
         "name": "newOwner",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       }
     ],
     "name": "transferOwnership",
@@ -583,64 +530,6 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
         "type": "uint256"
       }
     ],
-    "name": "getCharity",
-    "outputs": [
-      {
-        "internalType": "contract Charity",
-        "name": "charity",
-        "type": "address",
-        "networkId": 1
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_id",
-        "type": "uint256"
-      }
-    ],
-    "name": "getVoteStatus",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "status",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_id",
-        "type": "uint256"
-      }
-    ],
-    "name": "getVoteNextStatus",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "status",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_id",
-        "type": "uint256"
-      }
-    ],
     "name": "agree",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -662,36 +551,9 @@ cfxtest:type.contract:acbuadnh48p86puwg29cht1w824zdshdf6f9h6n4sn
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "_num",
-        "type": "uint256"
-      }
-    ],
-    "name": "updatePassVoteNum",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_num",
-        "type": "uint256"
-      }
-    ],
-    "name": "updateFailVoteNum",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "address",
         "name": "receiverAddress",
-        "type": "address",
-        "networkId": 1
+        "type": "address"
       }
     ],
     "name": "updateReceiver",
