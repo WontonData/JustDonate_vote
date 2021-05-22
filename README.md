@@ -29,9 +29,8 @@ xbb: `cfx:aarrdu3wde9pxn1pa3r7vcfavk6wah1sapxsha6t5b`
 ## ABI
 
 
-
+### 主网
 ```json
-//主网
 [
   {
     "inputs": [
