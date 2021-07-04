@@ -17,6 +17,7 @@ contract VoteToken is ERC20 , Ownable{
   mapping(address => mapping(uint => bool)) public is_voted; //是否投过票
   address receiver = address(0); //接受vote币的地址
   address public admin; 
+  // 代付
   SponsorWhitelistControl constant public SPONSOR = SponsorWhitelistControl(0x0888000000000000000000000000000000000001);
 
   event addAgree(uint _id,address sender,uint voteTime); //投同意票事件
@@ -33,8 +34,6 @@ contract VoteToken is ERC20 , Ownable{
     users[0] = address(0);
     SPONSOR.addPrivilege(users);
   }
-
-
 
   // 投同意票
   function agree(uint _id) public{
@@ -58,10 +57,12 @@ contract VoteToken is ERC20 , Ownable{
     votes_against[_id].voteNum++;
   }
 
+  // 更新接收投票地址
   function updateReceiver(address receiverAddress) public onlyOwner {
     receiver = receiverAddress;
   }
 
+  // 添加供应量
   function addSupply(uint _num) public onlyOwner {
     _mint(msg.sender,_num * 1 ether);
   }
